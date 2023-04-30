@@ -38,8 +38,6 @@ function formSubmit(e) {
   const link = input.value;
   const url = `https://api.shrtco.de/v2/shorten?url=${link}`;
 
-  console.log(input);
-
   if (link === '') {
     errMsg.innerHTML = 'Please enter something';
 
@@ -90,8 +88,16 @@ function formSubmit(e) {
 // Copy to clipboard
 document.addEventListener('click', (e) => {
   if (e.target && e.target.id == 'copy-btn') {
+    const copyBtn = document.getElementById('copy-btn');
+    copyBtn.innerHTML = 'Copied!';
+    copyBtn.style.backgroundColor = 'hsl(257, 27%, 26%)';
     const copyText = e.target.previousElementSibling.innerText;
     navigator.clipboard.writeText(copyText);
-    alert('Copied to clipboard');
+
+    // Reset button text and color
+    setTimeout(() => {
+      copyBtn.innerHTML = 'Copy';
+      copyBtn.style.backgroundColor = 'hsl(180, 66%, 49%)';
+    }, 2000);
   }
 });
