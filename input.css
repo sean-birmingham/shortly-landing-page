@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+.error {
+  @apply border-red;
+}
+
+.link-item {
+  @apply flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row;
+}
+
+.original-link-text {
+  @apply font-bold text-center text-veryDarkViolet md:text-left;
+}
+
+.short-link-text {
+  @apply text-cyan font-bold;
+}
+
+.link-result {
+  @apply flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0;
+}
+
+.copy-btn {
+  @apply p-2 px-8 text-white rounded-lg bg-cyan hover:opacity-70 focus:outline-none;
+}
+
 #cta {
   background-image: url('../images/bg-boost-desktop.svg');
   background-repeat: no-repeat;

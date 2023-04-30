@@ -940,6 +940,97 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.error {
+  --tw-border-opacity: 1;
+  border-color: hsl(0 87% 67% / var(--tw-border-opacity));
+}
+
+.link-item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .link-item {
+    flex-direction: row;
+  }
+}
+
+.original-link-text {
+  text-align: center;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: hsl(260 8% 14% / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .original-link-text {
+    text-align: left;
+  }
+}
+
+.short-link-text {
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: hsl(180 66% 49% / var(--tw-text-opacity));
+}
+
+.link-result {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.link-result > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+@media (min-width: 768px) {
+  .link-result {
+    flex-direction: row;
+  }
+
+  .link-result > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+}
+
+.copy-btn {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: hsl(180 66% 49% / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.copy-btn:hover {
+  opacity: 0.7;
+}
+
+.copy-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 #cta {
   background-image: url('../images/bg-boost-desktop.svg');
   background-repeat: no-repeat;

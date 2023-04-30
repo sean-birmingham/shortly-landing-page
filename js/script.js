@@ -38,17 +38,19 @@ function formSubmit(e) {
   const link = input.value;
   const url = `https://api.shrtco.de/v2/shorten?url=${link}`;
 
+  console.log(input);
+
   if (link === '') {
     errMsg.innerHTML = 'Please enter something';
 
-    input.classList.add('border-red');
+    input.classList.add('error');
   } else if (!validURL(link)) {
     errMsg.innerHTML = 'Please enter a valid URL';
 
-    input.classList.add('border-red');
+    input.classList.add('error');
   } else {
     errMsg.innerHTML = '';
-    input.classList.remove('border-red');
+    input.classList.remove('error');
 
     fetch(url)
       .then((resp) => resp.json())
@@ -59,18 +61,18 @@ function formSubmit(e) {
 
         const linkItem = `
         <div
-        class="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
+        class="link-item"
       >
-        <p class="font-bold text-center text-veryDarkViolet md:text-left">
+        <p class="original-link-text">
           ${originalLink}
         </p>
   
         <div
-          class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-2 md:flex-row md:space-y-0"
+          class="link-result"
         >
-          <p class="font-bold text-cyan" id="link-text">${shortLink}</p>
+          <p class="short-link-text" id="link-text">${shortLink}</p>
           <button id="copy-btn"
-            class="p-2 px-8 text-white rounded-lg bg-cyan hover:opacity-70 focus:outline-none"
+            class="copy-btn"
           >
             Copy
           </button>
